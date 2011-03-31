@@ -52,16 +52,12 @@ public class BeatPlayer extends ListActivity {
             }
         });
     
-         Button playPauseButton = (Button)findViewById(R.id.buttonPausePlay);
+        Button playPauseButton = (Button)findViewById(R.id.buttonPausePlay);
         // Listener for Play and Pause 
         playPauseButton.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
-            	
-            	if(mp.isPlaying()) {
-            		mp.pause();
-            		
-            	} else 
-            		mp.start();        	           	
+            	            	
+            	onResumePlay();
             }
         });
         
@@ -242,6 +238,23 @@ public class BeatPlayer extends ListActivity {
 
     }
    
+    
+    // Handle on Resume Play
+    public void onResumePlay() {
+    	
+        if(playStarted == true){
+        	
+        	if(mp.isPlaying()) {
+        		mp.pause();
+        		
+        	} else 
+        		mp.start();     	
+        	
+        } else {
+        		
+        		Toast.makeText(this, "Get some beats first - Tap a song to play", Toast.LENGTH_SHORT).show();
+        	}
+    	}
     
     // Use back hard key to stop audio and kill application
     public boolean onKeyDown(int keyCode, KeyEvent event) {

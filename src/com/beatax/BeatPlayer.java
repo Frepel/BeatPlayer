@@ -37,13 +37,14 @@ public class BeatPlayer extends ListActivity {
 	public int beatCurrent ;
 	public boolean playStarted = false;
 	String pos, total;
+	Button getBeatsButton, playPauseButton, nextButton, backButton;
 
 	@Override
 	public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         setContentView(R.layout.main);
         
-        Button getBeatsButton = (Button)findViewById(R.id.buttonAdd);
+        getBeatsButton = (Button)findViewById(R.id.buttonAdd);
         //Listener for get Get Beats
         getBeatsButton.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
@@ -52,7 +53,7 @@ public class BeatPlayer extends ListActivity {
             }
         });
     
-        Button playPauseButton = (Button)findViewById(R.id.buttonPausePlay);
+        playPauseButton = (Button)findViewById(R.id.buttonPausePlay);
         // Listener for Play and Pause 
         playPauseButton.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
@@ -61,7 +62,7 @@ public class BeatPlayer extends ListActivity {
             }
         });
         
-        Button nextButton = (Button)findViewById(R.id.buttonNext);
+        nextButton = (Button)findViewById(R.id.buttonNext);
         // Listener for Next
         nextButton.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
@@ -70,7 +71,7 @@ public class BeatPlayer extends ListActivity {
             }
         });
         
-        Button backButton = (Button)findViewById(R.id.buttonPrevious);
+        backButton = (Button)findViewById(R.id.buttonPrevious);
         // Listener for Back 
         backButton.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {

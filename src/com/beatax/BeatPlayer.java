@@ -57,7 +57,14 @@ public class BeatPlayer extends ListActivity {
         // Listener for Play and Pause 
         playPauseButton.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
-            	            	
+            	
+            	if(playStarted == true){
+            		if(mp.isPlaying()) {
+            			playPauseButton.setText("Play");
+            		
+            		} else 
+            			playPauseButton.setText("Pause");
+            	}
             	onResumePlay();
             }
         });
@@ -66,7 +73,7 @@ public class BeatPlayer extends ListActivity {
         // Listener for Next
         nextButton.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
-            onNext();
+            	onNext();
               
             }
         });
@@ -147,6 +154,7 @@ public class BeatPlayer extends ListActivity {
 			mp.setDataSource(MEDIA_PATH + songs.get(position));
 			mp.prepare();
 			mp.start();
+			playPauseButton.setText("Pause");
 			playStarted = true;
 		} catch(IOException e) {
 			Log.v(getString(R.string.app_name), e.getMessage());
@@ -249,7 +257,7 @@ public class BeatPlayer extends ListActivity {
         		mp.pause();
         		
         	} else 
-        		mp.start();     	
+        		mp.start();
         	
         } else {
         		

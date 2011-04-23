@@ -179,6 +179,7 @@ public class BeatPlayer extends ListActivity {
         			mp.setDataSource(MEDIA_PATH + songs.get(newBeat));
         			mp.prepare();
         			mp.start();
+        			playPauseButton.setText("Pause");
         		} catch(IOException e) {
         			Log.v(getString(R.string.app_name), e.getMessage());
         		}  		
@@ -196,6 +197,7 @@ public class BeatPlayer extends ListActivity {
         			mp.setDataSource(MEDIA_PATH + songs.get(newBeat));
         			mp.prepare();
         			mp.start();
+        			playPauseButton.setText("Pause");
         		} catch(IOException e) {
         			Log.v(getString(R.string.app_name), e.getMessage());
         		}
@@ -218,6 +220,7 @@ public class BeatPlayer extends ListActivity {
         			mp.setDataSource(MEDIA_PATH + songs.get(0));
         			mp.prepare();
         			mp.start();
+        			playPauseButton.setText("Pause");
         		} catch(IOException e) {
         			Log.v(getString(R.string.app_name), e.getMessage());
         		}  		
@@ -235,6 +238,7 @@ public class BeatPlayer extends ListActivity {
         			mp.setDataSource(MEDIA_PATH + songs.get(newBeat));
         			mp.prepare();
         			mp.start();
+        			playPauseButton.setText("Pause");
         		} catch(IOException e) {
         			Log.v(getString(R.string.app_name), e.getMessage());
         		}
